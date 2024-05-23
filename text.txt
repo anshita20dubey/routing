@@ -1,1 +1,2 @@
 <Routes></Routes> ye switch statement ki trh kaam krta h 
+NavLink saath me addtional data pass krne deta h

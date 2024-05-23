@@ -1,13 +1,14 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const nav = () => {
   return (
     <nav className='justify-center flex gap-10'>
-      <a className='hover:text-red-600' href="\">Home</a>
-      <a className='hover:text-red-600' href="\users">Users</a>
-      <a className='hover:text-red-600' href="\about">About</a>
+      <NavLink style={(e) => ({fontWeight: e.isActive ? "900" : "400"} )} className={(e)=>(e.isActive ? "text-red-500" : "")} to="/">Home</NavLink>
+      <NavLink style={(e) => ({fontWeight: e.isActive ? "900" : "400"} )} className={(e)=>(e.isActive ? "text-red-500" : "")} to="/users">Users</NavLink>
+      <NavLink style={(e) => ({fontWeight: e.isActive ? "900" : "400"} )} className={(e)=>(e.isActive ? "text-red-500" : "")} to="/about">About</NavLink>
     </nav>
   )
 }
 
-export default nav
+export default nav;
