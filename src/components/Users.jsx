@@ -1,9 +1,10 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 
 const Users = () => {
   const navigate = useNavigate()
-  const SubmitHandler = (e)=>{
+  const { pathname } = useLocation();
+  const SubmitHandler = (e) => {
     e.preventDefault();
     console.log("Form Submitted");
     // code to submit data to database
@@ -18,6 +19,16 @@ const Users = () => {
         <br />
         <button className='bg-red-300 py-2 px-4'>Submit</button>
       </form>
+      <hr />
+      <ul className='list-disc mt-5'>   
+        <li className='list-item'>
+          <Link className='list-item' to={`${pathname}/1`}>item1</Link>
+          <Link className='list-item' to={`${pathname}/2`}>item2</Link>
+          <Link className='list-item' to={`${pathname}/3`}>item3</Link>
+        </li>
+      </ul>
+      <hr />
+      <Outlet className="mt-5" />
     </div>
   )
 }
